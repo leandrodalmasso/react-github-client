@@ -1,0 +1,16 @@
+/* bring in normalize.css styles */
+@import-normalize;
+
+/* set box-sizing */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.body {
+  background-color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
