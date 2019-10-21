@@ -1,0 +1,9 @@
+@import '../../scss/colors.scss';
+
+.landing-card {
+  background-color: $white;
+  border-radius: 5px;
+  border: 2px solid $grey;
+  margin: 0 10px 10px 10px;
+  padding: 20px;
+}

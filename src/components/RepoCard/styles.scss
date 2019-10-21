@@ -1,0 +1,28 @@
+@import '../../scss/colors.scss';
+
+.repo-card {
+  &:hover {
+    border-color: $blue;
+    cursor: pointer;
+  }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__pills {
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    margin: 0;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}

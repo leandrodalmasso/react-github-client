@@ -1,9 +1,6 @@
 // Dependencies
 import React from 'react';
 
-// Styles
-import './index.scss';
-
 function Home() {
   return (
     <div className='home'>

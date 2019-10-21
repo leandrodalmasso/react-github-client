@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Styles
-import './index.scss';
+import './styles.scss';
 
 function Footer() {
   return (

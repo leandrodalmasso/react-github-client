@@ -1,13 +1,10 @@
 // Dependencies
 import React from 'react';
 
-// Styles
-import './index.scss';
-
 function TopTen() {
   return (
     <div className='top-ten'>
-      <h2>TopTen</h2>
+      <h2>Search</h2>
     </div>
   );
 }

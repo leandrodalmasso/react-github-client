@@ -3,22 +3,22 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 // Styles
-import './index.scss';
+import './styles.scss';
 
-function Header() {
+function HeaderNavbar() {
   const navActiveClassName = 'header__menu__item--active';
   const navigation = [{
     text: 'Home',
     redirect: '/home',
   },{
-    text: 'Usuarios',
+    text: 'Users',
     redirect: '/users',
   },{
     text: 'Popular',
     redirect: '/popular',
   },{
-    text: 'Top 10',
-    redirect: 'top-ten'
+    text: 'Search',
+    redirect: 'search'
   }];
 
   return (
@@ -46,4 +46,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderNavbar;

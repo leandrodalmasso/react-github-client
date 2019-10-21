@@ -1,0 +1,32 @@
+@import '../../scss/colors.scss';
+
+.pill {
+  align-items: center;
+  background-color: $blue;
+  border-radius: 30px;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  justify-content: center;
+  width: 80px;
+  margin-right: 10px;
+
+  &--ghost {
+    background-color: transparent;
+    border: 2px solid $blue;
+    color: $blue;
+  }
+
+  &__title {
+    font-size: 10px;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+  }
+}

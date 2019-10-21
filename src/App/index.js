@@ -3,28 +3,28 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 // Components
-import Header from '../components/Header';
+import HeaderNavbar from '../components/HeaderNavbar';
 import Footer from '../components/Footer';
 import Home from './Home';
 import Users from './Users';
 import Popular from './Popular';
-import TopTen from './TopTen';
+import Search from './Search';
 import ErrorPage from './ErrorPage';
 
 // Styles
-import './index.scss';
+import './styles.scss';
 
 function App() {
   return (
     <div className="app">
-      <Header />
+      <HeaderNavbar />
       <main className="app-main">
         <Switch>
           <Redirect exact from="/" to="/home" />
           <Route component={Home} path="/home" />
           <Route component={Users} path="/users" />
           <Route component={Popular} path="/popular" />
-          <Route component={TopTen} path="/top-ten" />
+          <Route component={Search} path="/search" />
           <Route component={ErrorPage} path="*" />
         </Switch>
       </main>

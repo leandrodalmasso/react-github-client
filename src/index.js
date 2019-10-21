@@ -1,19 +1,27 @@
 // Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from "react-router-dom";
 
 // Styles
-import './index.scss';
+import './styles.scss';
 
 // Components
 import App from './App';
 
 // Other
 import * as serviceWorker from './serviceWorker';
+import configureStore from './store/configureStore';
+
+const store = configureStore();
 
 ReactDOM.render(
-  <Router><App /></Router>,
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 

@@ -1,0 +1,9 @@
+@import '../../scss/colors.scss';
+
+.user-card {
+  cursor: pointer;
+
+  &:hover {
+    border-color: $blue;
+  }
+}

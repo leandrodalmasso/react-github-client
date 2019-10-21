@@ -1,9 +1,6 @@
 // Dependencies
 import React from 'react';
 
-// Styles
-import './index.scss';
-
 function Users() {
   return (
     <div className='users'>
