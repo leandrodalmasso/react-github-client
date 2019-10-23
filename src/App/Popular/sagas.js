@@ -8,12 +8,12 @@ import { POPULAR_REPOS_GET } from './actionTypes';
 import { popularReposRequest, popularReposSuccess, popularReposFail } from './actions';
 
 // Api
-import popularReposApi from './api';
+import getPopularRepos from './api';
 
 function* workerSaga() {
   yield put(popularReposRequest());
   try {
-    const popularRepos = yield call(popularReposApi);
+    const popularRepos = yield call(getPopularRepos);
     yield put(popularReposSuccess(popularRepos))
   } catch (error) {
     const { message = '' } = error;

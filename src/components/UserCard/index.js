@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 
 // Components
 import LandingCard from '../LandingCard';
-import CardImageHeader from '../CardImageHeader';
+import CardHeader from '../CardHeader';
+import ExternalRedirect from '../ExternalRedirect';
 
 // Styles
 import './styles.scss';
@@ -12,30 +13,32 @@ import './styles.scss';
 // Assets
 import logo from '../../assets/images/logo192.png';
 
-function UserCard({ image, onClick, subtitle, title }) {
+function UserCard({ image, subtitle, title, url }) {
   return (
-    <LandingCard className="user-card" onClick={onClick}>
-      <CardImageHeader
-        image={image}
-        subtitle={subtitle}
-        title={title}
-      />
-    </LandingCard>
+    <ExternalRedirect url={url}>
+      <LandingCard className="user-card">
+        <CardHeader
+          image={image}
+          subtitle={subtitle}
+          title={title}
+        />
+      </LandingCard>
+    </ExternalRedirect>
   );
 }
 
-UserCard.defaultProps = {
-  image: logo,
-  onClick: () => {},
-  subtitle: '',
-  title: '',
-};
-
 UserCard.propTypes = {
   image: PropTypes.string,
-  onClick: PropTypes.func,
   subtitle: PropTypes.string,
   title: PropTypes.string,
+  url: PropTypes.string.isRequired,
+};
+
+UserCard.defaultProps = {
+  image: logo,
+  subtitle: '',
+  title: '',
+  url: '',
 };
 
 export default UserCard;

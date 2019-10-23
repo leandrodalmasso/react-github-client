@@ -1,5 +1,5 @@
 // Dependencies
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 
 // Components
@@ -9,24 +9,20 @@ import ReposList from '../../components/ReposList';
 // Actions
 import { popularReposGet, popularReposReset } from './actions';
 
-class Popular extends Component {
-  componentDidMount() {
-    const { popularReposGet, repos } = this.props;
-
+function Popular({ error, popularReposGet, repos }) {
+  function handleReposGet() {
     if (!repos.length) popularReposGet();
   }
+  useEffect(handleReposGet);
 
-  render() {
-    const { error, repos } = this.props;
-    const title = 'These are the most popular repos on GitHub!';
-
-    return (
-      <div className='popular'>
-        <SectionHeader title={title} />
-        <ReposList error={error} repos={repos} />
-      </div>
-    );
-  }
+  return (
+    <div className='popular'>
+      <SectionHeader
+        title="These are the most popular repos on GitHub!"
+      />
+      <ReposList error={error} repos={repos} />
+    </div>
+  );
 }
 
 function mapStatetoProps({ popular: { error, repos } }) {

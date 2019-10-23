@@ -8,7 +8,7 @@ import './styles.scss';
 // Assets
 import logo from '../../assets/images/logo192.png';
 
-function CardImageHeader({ className, image, subtitle, title }) {
+function CardHeader({ className, image, subtitle, title }) {
   return (
     <div className={`card-image-header${className ? ` ${className}` : ''}`}>
       <img
@@ -24,18 +24,18 @@ function CardImageHeader({ className, image, subtitle, title }) {
   );
 }
 
-CardImageHeader.defaultProps = {
+CardHeader.defaultProps = {
   className: '',
   image: logo,
   subtitle: '',
   title: '',
 };
 
-CardImageHeader.propTypes = {
+CardHeader.propTypes = {
   className: PropTypes.string,
   image: PropTypes.string,
   subtitle: PropTypes.string,
   title: PropTypes.string,
 };
 
-export default CardImageHeader;
+export default CardHeader;

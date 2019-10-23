@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 import Home from './Home';
 import Users from './Users';
 import Popular from './Popular';
-import Search from './Search';
+import Repos from './Repos';
 import ErrorPage from './ErrorPage';
 
 // Styles
@@ -24,7 +24,7 @@ function App() {
           <Route component={Home} path="/home" />
           <Route component={Users} path="/users" />
           <Route component={Popular} path="/popular" />
-          <Route component={Search} path="/search" />
+          <Route component={Repos} path="/repos" />
           <Route component={ErrorPage} path="*" />
         </Switch>
       </main>

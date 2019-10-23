@@ -17,8 +17,8 @@ function HeaderNavbar() {
     text: 'Popular',
     redirect: '/popular',
   },{
-    text: 'Search',
-    redirect: 'search'
+    text: 'Repos',
+    redirect: 'repos'
   }];
 
   return (

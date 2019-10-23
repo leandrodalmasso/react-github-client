@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // Components
 import LandingCard from '../LandingCard';
-import CardImageHeader from '../CardImageHeader';
+import CardHeader from '../CardHeader';
 import Pill from '../Pill';
 import ExternalRedirect from '../ExternalRedirect';
 
@@ -21,7 +21,7 @@ function RepoCard({ description, image, pills, subtitle, title, url }) {
   return (
     <ExternalRedirect url={url}>
       <LandingCard className="repo-card">
-        <CardImageHeader
+        <CardHeader
           className="repo-card__header"
           image={image}
           subtitle={subtitle}
