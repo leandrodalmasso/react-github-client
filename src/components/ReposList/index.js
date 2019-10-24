@@ -10,7 +10,7 @@ import RepoCard from '../RepoCard';
 import { getDateString } from '../../utils/helperFunctions';
 
 function ReposList({ className, error, fetching, repos }) {
-  let content = <StatusMessage text="Results will appear here. Search something!" />;
+  let content = <StatusMessage text="Results will appear here. Search something! If nothing was found try search for something else..." />;
 
   if (fetching) {
     content = <StatusMessage text="Loading..." />;

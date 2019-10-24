@@ -15,7 +15,7 @@ import { popularReposGet, popularReposReset } from './actions';
 
 function Popular({ error, fetching, popularReposGet, repos }) {
   function handleReposGet() {
-    if (!repos.length) popularReposGet();
+    if (!repos.length && !error) popularReposGet();
   }
   useEffect(handleReposGet);
 
