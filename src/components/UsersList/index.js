@@ -7,7 +7,7 @@ import StatusMessage from '../StatusMessage';
 import UserCard from '../UserCard';
 
 function UsersList({ className, error, fetching, users }) {
-  let content = <StatusMessage text="Results will appear here. Search something!" />;
+  let content = <StatusMessage text="Results will appear here. Search something! If nothing was found try search for something else..." />;
 
   if (fetching) {
     content = <StatusMessage text="Loading..." />;
