@@ -8,6 +8,7 @@ import './styles.scss';
 // Components
 import SectionHeader from '../../components/SectionHeader';
 import ReposList from '../../components/ReposList';
+import ScrollToTop from '../../components/ScrollToTop';
 
 // Actions
 import { popularReposGet, popularReposReset } from './actions';
@@ -20,6 +21,7 @@ function Popular({ error, fetching, popularReposGet, repos }) {
 
   return (
     <div className='popular'>
+      <ScrollToTop />
       <SectionHeader
         title="These are the most popular repos on GitHub!"
       />

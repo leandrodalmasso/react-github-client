@@ -25,7 +25,7 @@ function Users({ error, fetching, users, usersByKeywordGet, usersByKeywordReset 
       <SearchInput
         onChange={setKeyword}
         onClearClick={handleClear}
-        placeholderText="Who are you trying to find?"
+        placeholderText="Username?"
         value={keyword}
       />
       <UsersList error={error} fetching={fetching} users={users} />
