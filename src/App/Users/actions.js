@@ -1,42 +1,42 @@
 // Action types
 import {
-  SEARCH_USERS_GET,
-  SEARCH_USERS_REQUEST,
-  SEARCH_USERS_SUCCESS,
-  SEARCH_USERS_FAIL,
-  SEARCH_USERS_RESET,
+  USERS_BY_KEYWORD_GET,
+  USERS_BY_KEYWORD_REQUEST,
+  USERS_BY_KEYWORD_SUCCESS,
+  USERS_BY_KEYWORD_FAIL,
+  USERS_BY_KEYWORD_RESET,
 } from './actionTypes';
 
-export function searchUsersGet(keyword) {
+export function usersByKeywordGet(keyword) {
   return {
-    type: SEARCH_USERS_GET,
+    type: USERS_BY_KEYWORD_GET,
     payload: keyword,
   };
 }
 
-export function searchUsersRequest() {
+export function usersByKeywordRequest() {
   return {
-    type: SEARCH_USERS_REQUEST,
+    type: USERS_BY_KEYWORD_REQUEST,
     fetching: true,
   };
 }
 
-export function searchUsersSuccess(users) {
+export function usersByKeywordSuccess(users) {
   return {
-    type: SEARCH_USERS_SUCCESS,
+    type: USERS_BY_KEYWORD_SUCCESS,
     fetching: false,
     payload: users,
   };
 }
 
-export function searchUsersFail(error) {
+export function usersByKeywordFail(error) {
   return {
-    type: SEARCH_USERS_FAIL,
+    type: USERS_BY_KEYWORD_FAIL,
     fetching: false,
     payload: error,
   };
 }
 
-export function searchUsersReset() {
-  return { type: SEARCH_USERS_RESET };
+export function usersByKeywordReset() {
+  return { type: USERS_BY_KEYWORD_RESET };
 }

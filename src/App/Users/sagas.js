@@ -2,25 +2,25 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 
 // Action types
-import { SEARCH_USERS_GET } from './actionTypes';
+import { USERS_BY_KEYWORD_GET } from './actionTypes';
 
 // Actions
-import { searchUsersRequest, searchUsersSuccess, searchUsersFail } from './actions';
+import { usersByKeywordRequest, usersByKeywordSuccess, usersByKeywordFail } from './actions';
 
 // Api
-import getUsersByName from './api';
+import usersByKeywordApi from './api';
 
 function* workerSaga({ payload: keyword }) {
-  yield put(searchUsersRequest());
+  yield put(usersByKeywordRequest());
   try {
-    const users = yield call(getUsersByName, keyword);
-    yield put(searchUsersSuccess(users))
+    const users = yield call(usersByKeywordApi, keyword);
+    yield put(usersByKeywordSuccess(users))
   } catch (error) {
     const { message = '' } = error;
-    yield put(searchUsersFail(message));
+    yield put(usersByKeywordFail(message));
   }
 }
 
 export default function* watcherSaga() {
-  yield takeLatest(SEARCH_USERS_GET, workerSaga);
+  yield takeLatest(USERS_BY_KEYWORD_GET, workerSaga);
 }

@@ -5,7 +5,7 @@ const params = {
   per_page: 10,
 };
 
-export default function getUsersByName(keyword) {
+export default function usersByKeywordApi(keyword) {
   return gitHubApiInstance({
     url: 'search/users',
     method: 'get',

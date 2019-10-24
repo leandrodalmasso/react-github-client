@@ -2,6 +2,9 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
+// Styles
+import './styles.scss';
+
 // Components
 import HeaderNavbar from '../components/HeaderNavbar';
 import Footer from '../components/Footer';
@@ -10,9 +13,6 @@ import Users from './Users';
 import Popular from './Popular';
 import Repos from './Repos';
 import ErrorPage from './ErrorPage';
-
-// Styles
-import './styles.scss';
 
 function App() {
   return (

@@ -9,8 +9,12 @@ import RepoCard from '../RepoCard';
 // Other
 import { getDateString } from '../../utils/helperFunctions';
 
-function ReposList({ className, error, repos }) {
-  let content = <StatusMessage text="Loading..." />;
+function ReposList({ className, error, fetching, repos }) {
+  let content = <StatusMessage text="Results will appear here. Search something!" />;
+
+  if (fetching) {
+    content = <StatusMessage text="Loading..." />;
+  }
 
   if (error) {
     content = <StatusMessage text={`${error}. Please try again or reload the page.`} />
@@ -59,12 +63,14 @@ function ReposList({ className, error, repos }) {
 ReposList.propTypes = {
   className: PropTypes.string,
   error: PropTypes.string,
+  fetching: PropTypes.bool,
   repos: PropTypes.array,
 };
 
 ReposList.defaultProps = {
   className: '',
   error: '',
+  fetching: false,
   repos: [],
 };
 

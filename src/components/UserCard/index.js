@@ -2,13 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Styles
+import './styles.scss';
+
 // Components
 import LandingCard from '../LandingCard';
 import CardHeader from '../CardHeader';
 import ExternalRedirect from '../ExternalRedirect';
-
-// Styles
-import './styles.scss';
 
 // Assets
 import logo from '../../assets/images/logo192.png';

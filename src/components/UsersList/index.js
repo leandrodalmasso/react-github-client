@@ -6,8 +6,12 @@ import PropTypes from 'prop-types';
 import StatusMessage from '../StatusMessage';
 import UserCard from '../UserCard';
 
-function UsersList({ className, error, users }) {
+function UsersList({ className, error, fetching, users }) {
   let content = <StatusMessage text="Results will appear here. Search something!" />;
+
+  if (fetching) {
+    content = <StatusMessage text="Loading..." />;
+  }
 
   if (error) {
     content = <StatusMessage text={`${error}. Please try again or reload the page.`} />
@@ -43,12 +47,14 @@ function UsersList({ className, error, users }) {
 UsersList.propTypes = {
   className: PropTypes.string,
   error: PropTypes.string,
+  fetching: PropTypes.bool,
   users: PropTypes.array,
 };
 
 UsersList.defaultProps = {
   className: '',
   error: '',
+  fetching: false,
   users: [],
 };
 

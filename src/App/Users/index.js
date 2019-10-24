@@ -1,6 +1,9 @@
 // Dependencies
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
+
+// Styles
+import './styles.scss';
 
 // Components
 import SectionHeader from '../../components/SectionHeader';
@@ -8,44 +11,33 @@ import SearchInput from '../../components/SearchInput';
 import UsersList from '../../components/UsersList';
 
 // Actions
-import { searchUsersGet, searchUsersReset } from './actions';
+import { usersByKeywordGet, usersByKeywordReset } from './actions';
 
-function Users({ error, searchUsersGet, searchUsersReset, users }) {
-  const [keyword, setKeyword] = useState('');
+// Hooks
+import { useSearch } from '../../utils/hooks';
 
-  function handleUserSearch() {
-    if (keyword) {
-      if (keyword.length > 3) searchUsersGet(keyword);
-    } else {
-      if (users.length) searchUsersReset();
-    }
-  }
-  useEffect(handleUserSearch, [keyword]);
-
-  function handleClearclick() {
-    searchUsersReset();
-    setKeyword('');
-  }
+function Users({ error, fetching, users, usersByKeywordGet, usersByKeywordReset }) {
+  const [keyword, setKeyword, handleClear] = useSearch(usersByKeywordGet, usersByKeywordReset, users);
 
   return (
     <div className='users'>
       <SectionHeader title="Search users!" />
       <SearchInput
         onChange={setKeyword}
-        onClearClick={handleClearclick}
-        placeholderText="Username..."
+        onClearClick={handleClear}
+        placeholderText="Who are you trying to find?"
         value={keyword}
       />
-      <UsersList error={error} users={users} />
+      <UsersList error={error} fetching={fetching} users={users} />
     </div>
   );
 }
 
-function mapStatetoProps({ users: { error, users } }) {
-  return { error, users };
+function mapStatetoProps({ users: { error, fetching, users } }) {
+  return { error, fetching, users };
 }
 
 export default connect(
   mapStatetoProps,
-  { searchUsersGet, searchUsersReset }
+  { usersByKeywordGet, usersByKeywordReset }
 )(Users);
