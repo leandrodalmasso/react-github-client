@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 function StatusMessage({ text }) {
-  return <h3 className='loading'>{text}</h3>;
+  return <h3 className='status-message'>{text}</h3>;
 }
 
 StatusMessage.propTypes = { text: PropTypes.string };

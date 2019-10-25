@@ -10,15 +10,15 @@ import logo from '../../assets/images/logo192.png';
 
 function CardHeader({ className, image, subtitle, title }) {
   return (
-    <div className={`card-image-header${className ? ` ${className}` : ''}`}>
+    <div className={`card-header${className ? ` ${className}` : ''}`}>
       <img
         alt=""
-        className="card-image-header__img"
+        className="card-header__img"
         src={image}
       />
-      <div className="card-image-header__info">
-        {title && <h3 className="card-image-header__info__title">{title}</h3>}
-        {subtitle && <h4 className="card-image-header__info__subtitle">{subtitle}</h4>}
+      <div className="card-header__info">
+        {title && <h3 className="card-header__info-title">{title}</h3>}
+        {subtitle && <h4 className="card-header__info-subtitle">{subtitle}</h4>}
       </div>
     </div>
   );

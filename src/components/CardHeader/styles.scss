@@ -1,6 +1,6 @@
 @import '../../scss/colors.scss';
 
-.card-image-header {
+.card-header {
   display: flex;
   overflow: hidden;
   width: 100%;
@@ -16,11 +16,11 @@
     justify-content: center;
     margin-left: 20px;
 
-    &__title {
+    &-title {
       margin: 0 0 10px 0;
     }
 
-    &__subtitle {
+    &-subtitle {
       font-size: 14px;
       margin: 0;
       text-transform: uppercase;

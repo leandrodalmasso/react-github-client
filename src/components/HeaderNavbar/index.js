@@ -30,7 +30,7 @@ function HeaderNavbar() {
       <nav>
         <ul className="header__menu">
           {navigation.map(item => (
-            <li className="header__menu__item" key={`nav${item.text}`}>
+            <li className="header__menu-item" key={`nav${item.text}`}>
               <NavLink
                 activeClassName={navActiveClassName}
                 className="header__link"

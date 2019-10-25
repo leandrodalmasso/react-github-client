@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="app">
       <HeaderNavbar />
-      <main className="app-main">
+      <main className="app__main">
         <Switch>
           <Redirect exact from="/" to="/home" />
           <Route component={Home} path="/home" />
