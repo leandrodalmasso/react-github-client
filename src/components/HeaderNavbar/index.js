@@ -6,7 +6,6 @@ import { Link, NavLink } from 'react-router-dom';
 import './styles.scss';
 
 function HeaderNavbar() {
-  const navActiveClassName = 'header__menu__item--active';
   const navigation = [{
     text: 'Home',
     redirect: '/home',
@@ -32,7 +31,7 @@ function HeaderNavbar() {
           {navigation.map(item => (
             <li className="header__menu-item" key={`nav${item.text}`}>
               <NavLink
-                activeClassName={navActiveClassName}
+                activeClassName="header__menu-item--active"
                 className="header__link"
                 to={item.redirect}
               >
