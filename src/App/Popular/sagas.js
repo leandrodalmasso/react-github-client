@@ -10,10 +10,10 @@ import { popularReposRequest, popularReposSuccess, popularReposFail } from './ac
 // Api
 import popularReposApi from './api';
 
-function* workerSaga() {
+function* workerSaga({ pageNumber }) {
   yield put(popularReposRequest());
   try {
-    const popularRepos = yield call(popularReposApi);
+    const popularRepos = yield call(popularReposApi, pageNumber);
     yield put(popularReposSuccess(popularRepos))
   } catch (error) {
     const { message = '' } = error;

@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 // Styles
 import './styles.scss';
 
-function SectionHeader({ className, title, text }) {
+function SectionHeader({ className, title, subtitle }) {
   return (
     <header className={`section-header${className ? ` ${className}` : ''}`}>
       {title && <h2 className="section-header__title">{title}</h2>}
-      {text && <p className="section-header__text">{text}</p>}
+      {subtitle && <h2 className="section-header__subtitle">{subtitle}</h2>}
     </header>
   );
 }
@@ -17,13 +17,13 @@ function SectionHeader({ className, title, text }) {
 SectionHeader.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
-  text: PropTypes.string,
+  subtitle: PropTypes.string,
 }
 
 SectionHeader.defaultProps = {
   className: '',
   title: '',
-  text: '',
+  subtitle: '',
 }
 
 export default SectionHeader;

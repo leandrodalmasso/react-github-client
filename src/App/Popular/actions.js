@@ -7,8 +7,11 @@ import {
   POPULAR_REPOS_RESET,
 } from './actionTypes';
 
-export function popularReposGet() {
-  return { type: POPULAR_REPOS_GET };
+export function popularReposGet(pageNumber) {
+  return {
+    type: POPULAR_REPOS_GET,
+    pageNumber
+  };
 }
 
 export function popularReposRequest() {

@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
 
 // Styles
@@ -7,25 +7,43 @@ import './styles.scss';
 
 // Components
 import SectionHeader from '../../components/SectionHeader';
-import ReposList from '../../components/ReposList';
+import PaginatedReposList from '../../components/PaginatedReposList';
 import ScrollToTop from '../../components/ScrollToTop';
 
 // Actions
 import { popularReposGet, popularReposReset } from './actions';
 
-function Popular({ error, fetching, popularReposGet, repos }) {
+function Popular({ error, fetching, popularReposGet, popularReposReset, repos }) {
+  const [pageCount, setPageCount] = useState(1);
+
   function handleReposGet() {
-    if (!repos.length && !error) popularReposGet();
+    if (!repos.length && !error) {
+      popularReposGet(pageCount);
+      if (pageCount === 1) setPageCount(pageCount => pageCount + 1);
+    };
+
+    return () => { popularReposReset(); }
   }
-  useEffect(handleReposGet);
+  useEffect(handleReposGet, []);
+
+  function handleLoadMoreClick() {
+    setPageCount(pageCount => pageCount + 1);
+    popularReposGet(pageCount);
+  }
 
   return (
     <div className='popular'>
       <ScrollToTop />
       <SectionHeader
         title="These are the most popular repos on GitHub!"
+        subtitle="Ordered by stars..."
       />
-      <ReposList error={error} fetching={fetching} repos={repos} />
+      <PaginatedReposList
+        error={error}
+        fetching={fetching}
+        onLoadMoreClick={handleLoadMoreClick}
+        repos={repos}
+      />
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function reducer(state = initialState, { type, payload }) {
       return {
         ...state,
         fetching: false,
-        repos: payload,
+        repos: [...state.repos, ...payload],
       };
     case POPULAR_REPOS_FAIL:
       return {

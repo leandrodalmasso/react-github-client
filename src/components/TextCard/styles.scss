@@ -18,7 +18,7 @@
     background-color: $blue;
 
     &:hover {
-      background-color: $blue-light;
+      opacity: 0.8;
     }
   }
 
@@ -27,7 +27,7 @@
     background-color: $green;
 
     &:hover {
-      background-color: $green-light;
+      opacity: 0.8;
     }
   }
 

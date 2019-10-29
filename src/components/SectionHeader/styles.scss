@@ -1,23 +1,21 @@
 .section-header {
-  padding: 0 20px;
   width: 100%;
+  text-align: center;
 
   &__title {
-    text-align: center;
-    margin: 0 0 40px 0;
+    margin: 0 0 20px 0;
   }
 
-  &__text {
+  &__subtitle {
+    font-size: 20px;
     margin: 0 0 40px 0;
+    text-transform: uppercase;
   }
 }
 
 @media screen and (min-width: 700px) {
   .section-header {
     padding: 0;
-
-    &__title {
-      text-align: left;
-    }
+    text-align: left;
   }
 }
