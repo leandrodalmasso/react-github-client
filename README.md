@@ -1,5 +1,6 @@
 This project was made using the following technologies:
 
+* [Create React App](https://create-react-app.dev/)
 * [React](https://reactjs.org/)
 * [Redux](https://redux.js.org/)
 * [Redux-Saga](https://redux-saga.js.org/)
@@ -7,8 +8,7 @@ This project was made using the following technologies:
 * [Axios](https://github.com/axios/axios)
 * [date-fns](https://date-fns.org/)
 
-In order to run this project locally you need to install [Node.js](https://nodejs.org/en/).<br />
-Look for the latest LTS version.
+In order to run this project locally you need to install [Node.js](https://nodejs.org/en/). Look for the latest LTS version.
 
 ## Available Scripts
 
