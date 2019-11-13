@@ -1,6 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made using the following technologies:
 
-In order to run this project locally you need to install [Node.js](https://nodejs.org/en/). Look for the latest LTS version.
+* [React](https://reactjs.org/)
+* [Redux](https://redux.js.org/)
+* [Redux-Saga](https://redux-saga.js.org/)
+* [Sass](https://sass-lang.com/)
+* [Axios](https://github.com/axios/axios)
+* [date-fns](https://date-fns.org/)
+
+In order to run this project locally you need to install [Node.js](https://nodejs.org/en/).<br />
+Look for the latest LTS version.
 
 ## Available Scripts
 
