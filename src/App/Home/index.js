@@ -20,21 +20,18 @@ function Home() {
       />
       <div className="home__text-card">
         <TextCard
-          color="green"
           redirectRoute="/users"
           text="If you want to search your friends profiles go to the Users tab!"
         />
       </div>
       <div className="home__text-card home__text-card--right">
         <TextCard
-          color="blue"
           redirectRoute="/popular"
           text="Check the Popular section to see the most popular repos on the platform."
         />
       </div>
       <div className="home__text-card">
         <TextCard
-          color="green"
           redirectRoute="/repos"
           text="Also, you can go to the Repos section and search for something you like to see the best repos available on Github!"
         />

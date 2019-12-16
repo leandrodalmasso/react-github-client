@@ -1,34 +1,18 @@
 @import '../../scss//colors.scss';
 
 .text-card {
-  background-color: rgba($black, 0.4);
+  background-color: $green;
   border-radius: 5px;
+  color: $white;
   margin-top: 40px;
+  max-width: 700px;
+  min-height: 300px;
   padding: 40px;
   width: 100%;
-  min-height: 300px;
-  max-width: 700px;
 
   &:hover {
     cursor: pointer;
-  }
-
-  &--blue {
-    color: $white;
-    background-color: $blue;
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-
-  &--green {
-    color: $white;
-    background-color: $green;
-
-    &:hover {
-      opacity: 0.8;
-    }
+    opacity: 0.8;
   }
 
   &__text {

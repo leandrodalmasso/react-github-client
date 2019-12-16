@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 // Styles
 import './styles.scss';
 
-function TextCard({ className, color, redirectRoute, text }) {
+function TextCard({ className, redirectRoute, text }) {
   const history = useHistory();
 
   function handleClick() {
@@ -15,7 +15,7 @@ function TextCard({ className, color, redirectRoute, text }) {
 
   return (
     <div
-      className={`text-card${color ? ` text-card--${color}` : ''}${className ? ` ${className}` : ''}`}
+      className={`text-card${className ? ` ${className}` : ''}`}
       onClick={handleClick}
     >
       <h3 className="text-card__text">{text}</h3>
@@ -25,14 +25,12 @@ function TextCard({ className, color, redirectRoute, text }) {
 
 TextCard.propTypes = {
   className: PropTypes.string,
-  color: PropTypes.oneOf(['blue', 'green']),
   redirectRoute: PropTypes.string,
   text: PropTypes.string,
 };
 
 TextCard.defaultProps = {
   className: '',
-  color: '',
   redirectRoute: '',
   text: '',
 };
