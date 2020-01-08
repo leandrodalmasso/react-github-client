@@ -8,7 +8,7 @@ import './styles.scss';
 // Assets
 import clearIcon from '../../assets/icons/clear.svg';
 
-function InputSearch({ onClearClick, onChange, placeholderText, value }) {
+function SearchInput({ onClearClick, onChange, placeholderText, value }) {
   return (
     <div className="search-input">
       <input
@@ -27,18 +27,18 @@ function InputSearch({ onClearClick, onChange, placeholderText, value }) {
   );
 }
 
-InputSearch.propTypes = {
+SearchInput.propTypes = {
   onClearClick: PropTypes.func,
   onChange: PropTypes.func,
   placeholderText: PropTypes.string,
   value: PropTypes.string,
 };
 
-InputSearch.defaultProps = {
+SearchInput.defaultProps = {
   onClearClick: () => {},
   onChange: () => {},
   placeholderText: '',
   value: '',
 };
 
-export default InputSearch;
+export default SearchInput;

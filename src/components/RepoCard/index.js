@@ -14,7 +14,7 @@ import ExternalRedirect from '../ExternalRedirect';
 // Assets
 import logo from '../../assets/images/logo192.png';
 
-// Others
+// Other
 import { isEmpty } from '../../utils/helperFunctions';
 
 function RepoCard({ description, image, pills, subtitle, title, url }) {
