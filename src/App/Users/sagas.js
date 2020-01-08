@@ -1,5 +1,5 @@
 // Dependencies
-import { takeLatest, call, put } from "redux-saga/effects";
+import { call, put, debounce } from "redux-saga/effects";
 
 // Action types
 import { USERS_BY_KEYWORD_GET } from './actionTypes';
@@ -22,5 +22,5 @@ function* workerSaga({ payload: keyword }) {
 }
 
 export default function* watcherSaga() {
-  yield takeLatest(USERS_BY_KEYWORD_GET, workerSaga);
+  yield debounce(500, USERS_BY_KEYWORD_GET, workerSaga);
 }
